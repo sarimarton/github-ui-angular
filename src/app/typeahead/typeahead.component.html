@@ -1,0 +1,26 @@
+<ng-template #rt let-r="result" let-t="term">
+  <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+  |
+  <ngb-highlight [result]="r.description" [term]="t"></ngb-highlight>
+</ng-template>
+
+<div class="form-group">
+  <input
+    id="typeahead-http"
+    type="text"
+    class="form-control"
+    [class.is-invalid]="searchFailed"
+    [(ngModel)]="model"
+    [ngbTypeahead]="search"
+    placeholder="Search GitHub..."
+    [resultTemplate]="rt"
+    [inputFormatter]="formatter"
+  />
+  <span *ngIf="searching">searching...</span>
+  <div class="invalid-feedback" *ngIf="searchFailed">
+    Sorry, suggestions could not be loaded.
+  </div>
+</div>
+
+<hr>
+<pre>Model: {{ model | json }}</pre>
