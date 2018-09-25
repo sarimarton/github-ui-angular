@@ -37,6 +37,7 @@ export class AppComponent {
   issuesLoaded = false;
 
   @ViewChild('tabset') tabSet;
+  @ViewChild('chart') chart;
 
   constructor(private _service: GitHubIssuesService) {}
 
@@ -45,9 +46,9 @@ export class AppComponent {
     this.issuesLoaded = false;
     this.repo = event.item;
 
-    if (this.tabSet) {
-      this.tabSet.select('details');
-    }
+    this.tabSet.select('details');
+
+    // this.chart.refresh(this.repo);
   }
 
   onTabChange(event) {

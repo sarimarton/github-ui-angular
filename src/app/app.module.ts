@@ -5,10 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
+import { ChartModule } from 'angular-highcharts';
+
 import { AppComponent } from './app.component';
 import { TypeaheadComponent } from './typeahead/typeahead.component';
 import { RepoDetailsComponent } from './repo-details/repo-details.component';
 import { RepoIssuesComponent } from './repo-issues/repo-issues.component';
+import { ChartComponent } from './chart/chart.component';
 
 const appRoutes: Routes = [
   { path: '',
@@ -24,14 +27,16 @@ const appRoutes: Routes = [
     AppComponent,
     TypeaheadComponent,
     RepoDetailsComponent,
-    RepoIssuesComponent
+    RepoIssuesComponent,
+    ChartComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

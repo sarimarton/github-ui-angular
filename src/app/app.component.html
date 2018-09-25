@@ -10,18 +10,25 @@
   <!-- <div *ngIf="repo"> -->
     <h4 *ngIf="repo" class="mb-3">{{repo.full_name}}</h4>
 
-    <ngb-tabset #tabset *ngIf="repo" (tabChange)="onTabChange($event)">
+    <ngb-tabset #tabset (tabChange)="onTabChange($event)" [hidden]="!repo">
       <ngb-tab id="details" title="Details">
         <ng-template ngbTabContent>
           <div class="p-2">
-            <app-repo-details [repo]="repo"></app-repo-details>
+            <app-repo-details *ngIf="repo" [repo]="repo"></app-repo-details>
           </div>
         </ng-template>
       </ngb-tab>
       <ngb-tab id="issues" title="Open Issues ({{repo && repo.open_issues_count}})">
         <ng-template ngbTabContent>
           <div class="p-2">
-            <app-repo-issues [repo]="repo" [issues]="issues" [issuesLoaded]="issuesLoaded"></app-repo-issues>
+            <app-repo-issues *ngIf="repo" [repo]="repo" [issues]="issues" [issuesLoaded]="issuesLoaded"></app-repo-issues>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab id="chart" title="Visuals">
+        <ng-template ngbTabContent>
+          <div class="p-2">
+            <app-chart #chart [repo]="repo"></app-chart>
           </div>
         </ng-template>
       </ngb-tab>
