@@ -1,7 +1,11 @@
 <div class="m-3">
-  <h1 class="mb-4">
+  <h2 class="mb-4">
     HortonWorks Interview Assiment
-  </h1>
+  </h2>
 
-  <app-typeahead></app-typeahead>
+  <app-typeahead (itemSelected)="onSelect($event)"></app-typeahead>
+
+  <hr>
+
+  <app-repo-details *ngIf="repo" [repo]="repo"></app-repo-details>
 </div>

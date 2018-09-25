@@ -6,11 +6,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TypeaheadComponent } from './typeahead/typeahead.component';
+import { RepoDetailsComponent } from './repo-details/repo-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TypeaheadComponent
+    TypeaheadComponent,
+    RepoDetailsComponent
   ],
   imports: [
     BrowserModule,

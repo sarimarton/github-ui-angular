@@ -1,6 +1,6 @@
 // Inspired by https://ng-bootstrap.github.io/#/components/typeahead/examples#http
 
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, EventEmitter, Input, Output } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, map, tap, switchMap } from 'rxjs/operators';
@@ -20,7 +20,7 @@ export class GitHubService {
     return this.http
       .get(REPO_URL, { params: PARAMS.set('q', term) })
       .pipe(
-        map(response => response.items) //.map(item => item.name))
+        map(response => response.items)
       );
   }
 }
@@ -29,10 +29,10 @@ export class GitHubService {
   selector: 'app-typeahead',
   templateUrl: './typeahead.component.html',
   providers: [GitHubService],
-  styles: [`.form-control { width: 300px; }`],
+  styles: [`.form-control { width: 500px; }`],
 })
 export class TypeaheadComponent {
-  model: any;
+  @Output() itemSelected = new EventEmitter();
   searching = false;
   searchFailed = false;
 
@@ -54,6 +54,12 @@ export class TypeaheadComponent {
       ),
       tap(() => this.searching = false)
     )
+
+  modelChanged(value) {
+    if (typeof value === 'object') {
+      this.itemSelected.emit(value);
+    }
+  }
 
   formatter = (x: {name: string}) => x.name;
 }

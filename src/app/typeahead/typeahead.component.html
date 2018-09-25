@@ -6,13 +6,13 @@
 
 <div class="form-group">
   <input
-    id="typeahead-http"
     type="text"
     class="form-control"
     [class.is-invalid]="searchFailed"
-    [(ngModel)]="model"
+    [(ngModel)]="repo"
+    (ngModelChange)="modelChanged($event)"
     [ngbTypeahead]="search"
-    placeholder="Search GitHub..."
+    placeholder="Search GitHub repositories..."
     [resultTemplate]="rt"
     [inputFormatter]="formatter"
   />
@@ -21,6 +21,3 @@
     Sorry, suggestions could not be loaded.
   </div>
 </div>
-
-<hr>
-<pre>Model: {{ model | json }}</pre>
