@@ -11,10 +11,10 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Notes
 
 - No tests :(
-- No charts :(
 - No types (just sparingly)
-- I'm completely newbie to Angular
-- There's a nice ellipsis CSS loader, which toggles the dots after the word "Loading"
-- Routing was started, but didn't finish.
+- I'm completely newbie to Angular.
+- There's a chart.
+- There's a nice ellipsis CSS loader, which toggles the dots after the word "Loading".
+- Routing was started, but I couldn't finish.
 - I'd bring more stuff from the app component over to the repo-issues, but not sure how. Maybe sending an event to the tab to load? Not sure.
 - For some reason, the open_issues_count metadata doesn't match with the issues response filtered to the state:"open" items.
