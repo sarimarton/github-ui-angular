@@ -43,8 +43,11 @@ export class AppComponent {
   onSelect(event) {
     this.issues = [];
     this.issuesLoaded = false;
-    this.tabSet.select('details');
     this.repo = event.item;
+
+    if (this.tabSet) {
+      this.tabSet.select('details');
+    }
   }
 
   onTabChange(event) {

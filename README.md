@@ -1,27 +1,20 @@
-# Searchrep
+# Hortonworks Interview Assignment
+
+Search Github repositories and display details and issues.
+
+## Parts from the generated README:
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
-
-## Development server
-
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Notes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- No tests :(
+- No charts :(
+- No types (just sparingly)
+- I'm completely newbie to Angular
+- There's a nice ellipsis CSS loader, which toggles the dots after the word "Loading"
+- Routing was started, but didn't finish.
+- I'd bring more stuff from the app component over to the repo-issues, but not sure how. Maybe sending an event to the tab to load? Not sure.
+- For some reason, the open_issues_count metadata doesn't match with the issues response filtered to the state:"open" items.
