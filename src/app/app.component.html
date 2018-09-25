@@ -8,7 +8,7 @@
   <hr>
 
   <!-- <div *ngIf="repo"> -->
-    <h4 *ngIf="repo" class="mb-3">{{repo.full_name}}</h4>
+    <h4 *ngIf="repo" class="mb-3"><a href="{{repo.html_url}}">{{repo.full_name}}</a></h4>
 
     <ngb-tabset #tabset (tabChange)="onTabChange($event)" [hidden]="!repo">
       <ngb-tab id="details" title="Details">

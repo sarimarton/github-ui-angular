@@ -47,8 +47,6 @@ export class AppComponent {
     this.repo = event.item;
 
     this.tabSet.select('details');
-
-    // this.chart.refresh(this.repo);
   }
 
   onTabChange(event) {

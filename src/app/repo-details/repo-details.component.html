@@ -1,6 +1,6 @@
 <dl class="row">
   <dt class="col-2">URL</dt>
-  <dd class="col">{{repo.html_url}}</dd>
+  <dd class="col"><a href="{{repo.html_url}}">{{repo.html_url}}</a></dd>
 
   <div class="w-100"></div>
 
@@ -9,16 +9,21 @@
 
   <div class="w-100"></div>
 
+  <dt class="col-2">Open Issues count</dt>
+  <dd class="col">{{repo.open_issues_count}}</dd>
+
+  <div class="w-100"></div>
+
   <dt class="col-2">Forks count</dt>
   <dd class="col">{{repo.forks_count}}</dd>
 
   <div class="w-100"></div>
 
-  <dt class="col-2">Stargazers count</dt>
-  <dd class="col">{{repo.stargazers_count}}</dd>
+  <dt class="col-2">Watchers count</dt>
+  <dd class="col">{{repo.watchers}}</dd>
 
   <div class="w-100"></div>
 
-  <dt class="col-2">Open Issues count</dt>
-  <dd class="col">{{repo.open_issues_count}}</dd>
+  <dt class="col-2">Stargazers count</dt>
+  <dd class="col">{{repo.stargazers_count}}</dd>
 </dl>

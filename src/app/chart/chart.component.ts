@@ -19,7 +19,7 @@ export class ChartComponent {
           text: repo.full_name
         },
         subtitle: {
-          text: 'Some chart'
+          text: ''
         },
         xAxis: {
           categories: [''],
@@ -30,7 +30,7 @@ export class ChartComponent {
         yAxis: {
           min: 0,
           title: {
-            text: 'Population (millions)',
+            text: '',
             align: 'high'
           },
           labels: {
@@ -38,7 +38,7 @@ export class ChartComponent {
           }
         },
         tooltip: {
-          valueSuffix: ' millions'
+          valueSuffix: ''
         },
         plotOptions: {
           bar: {
