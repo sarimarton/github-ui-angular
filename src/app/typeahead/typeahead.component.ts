@@ -28,8 +28,8 @@ export class GitHubService {
 @Component({
   selector: 'app-typeahead',
   templateUrl: './typeahead.component.html',
+  styleUrls: ['./typeahead.component.css'],
   providers: [GitHubService],
-  styles: [`.form-control { width: 500px; }`],
 })
 export class TypeaheadComponent {
   @Output() itemSelected = new EventEmitter();
@@ -55,10 +55,8 @@ export class TypeaheadComponent {
       tap(() => this.searching = false)
     )
 
-  modelChanged(value) {
-    if (typeof value === 'object') {
-      this.itemSelected.emit(value);
-    }
+  onSelectItem(value) {
+    this.itemSelected.emit(value);
   }
 
   formatter = (x: {name: string}) => x.name;

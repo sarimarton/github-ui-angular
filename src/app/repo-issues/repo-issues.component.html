@@ -1,0 +1,7 @@
+<div *ngIf="!issuesLoaded" class="ellipsis-loader">Loading</div>
+
+<ul *ngIf="issuesLoaded">
+  <li *ngFor="let issue of issues">
+    {{issue.title}}
+  </li>
+</ul>

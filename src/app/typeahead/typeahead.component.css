@@ -1,0 +1,9 @@
+.form-control {
+  width: 500px;
+}
+
+input,
+input + span {
+  max-width: 500px;
+  display: inline-block !important;
+}

@@ -4,3 +4,24 @@ h1, h2, h3, h4, h5 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.ellipsis-loader::after {
+  content: ".";
+  animation-duration: 1s;
+  animation-name: ellipsis;
+  animation-iteration-count: infinite;
+}
+
+@keyframes ellipsis {
+  0% {
+    content: ".";
+  }
+
+  33% {
+    content: "..";
+  }
+
+  66% {
+    content: "...";
+  }
+}

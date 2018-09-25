@@ -1,7 +1,8 @@
 <ng-template #rt let-r="result" let-t="term">
-  <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
-  |
-  <ngb-highlight [result]="r.description" [term]="t"></ngb-highlight>
+  <div class="row">
+    <ngb-highlight [result]="r.full_name" [term]="t" class="col-4"></ngb-highlight>
+    <!-- <ngb-highlight [result]="r.description" [term]="t"></ngb-highlight> -->
+  </div>
 </ng-template>
 
 <div class="form-group">
@@ -10,13 +11,13 @@
     class="form-control"
     [class.is-invalid]="searchFailed"
     [(ngModel)]="repo"
-    (ngModelChange)="modelChanged($event)"
+    (selectItem)="onSelectItem($event)"
     [ngbTypeahead]="search"
     placeholder="Search GitHub repositories..."
     [resultTemplate]="rt"
     [inputFormatter]="formatter"
   />
-  <span *ngIf="searching">searching...</span>
+  <span *ngIf="searching" class="ml-2 ellipsis-loader">Searching</span>
   <div class="invalid-feedback" *ngIf="searchFailed">
     Sorry, suggestions could not be loaded.
   </div>
