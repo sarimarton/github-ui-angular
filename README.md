@@ -1,6 +1,6 @@
-# SearchRep
+# github-ui-angular
 
-A simple Github repository search UI using Angular 6
+A simple Github UI for repository search, using Angular 6
 
 ## Parts from the generated README:
 
