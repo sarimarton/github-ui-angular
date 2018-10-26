@@ -1,6 +1,6 @@
-# Hortonworks Interview Assignment
+# SearchRep
 
-Search Github repositories and display details and issues.
+A simple Github repository search UI using Angular 6
 
 ## Parts from the generated README:
 
